@@ -5,3 +5,13 @@
     border-radius: 2rem;
     background-color: whitesmoke;
 }
+
+.visited_btn {
+    background-color: burlywood;
+    color: black;
+}
+
+.not_visited_btn {
+    background-color: black;
+    color: white;
+}

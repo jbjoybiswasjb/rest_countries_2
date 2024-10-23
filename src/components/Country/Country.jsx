@@ -8,7 +8,7 @@ const Country = ({ country }) => {
     const [visit, setVisit] = useState(false);
 
     const handleVisit = () => {
-        setVisit(true);
+        setVisit(!visit);
     }
 
 
@@ -30,7 +30,7 @@ const Country = ({ country }) => {
 
             {visit ? <p>Visited</p> : <p>Not Visited</p>}
 
-            <button style={{ backgroundColor: '#cbcbcb'}} onClick={handleVisit}>{ visit ? 'Visited' : 'Going'}</button>
+            <button onClick={handleVisit} className={visit ? 'visited_btn' : 'not_visited_btn'}>{ visit ? 'Visited' : 'Going'}</button>
         </div>
     );
 };
