@@ -1,19 +1,18 @@
 import { useState } from 'react';
 import './Country.css';
 
-const Country = ({ country }) => {
+const Country = ({ country, handleVisitedCountry, handleVisitedFlags }) => {
     const { name, flags, population, area, cca3 } = country;
 
-    
+
     const [visit, setVisit] = useState(false);
 
     const handleVisit = () => {
         setVisit(!visit);
     }
 
-
     return (
-        <div className="country_css">
+        <div className={`country_css ${visit ? 'visited_bg' : 'going_bg'}`}>
             <h3>Country Name: {name?.common}</h3>
             <div style={{
                 height: 'auto',
@@ -28,9 +27,16 @@ const Country = ({ country }) => {
             <p>Area: {area}</p>
             <p>Code: {cca3}</p>
 
+
+
+            <button onClick={() => handleVisitedCountry(country)} style={{marginRight: '.5rem'}}>Mark Visited</button>
+
+            <button onClick={()=> handleVisitedFlags(country?.flags?.png)}>Visited Flag</button>
+
+
             {visit ? <p>Visited</p> : <p>Not Visited</p>}
 
-            <button onClick={handleVisit} className={visit ? 'visited_btn' : 'not_visited_btn'}>{ visit ? 'Visited' : 'Going'}</button>
+            <button onClick={handleVisit} className={visit ? 'visited_btn' : 'not_visited_btn'}>{visit ? 'Visited' : 'Going'}</button>
         </div>
     );
 };

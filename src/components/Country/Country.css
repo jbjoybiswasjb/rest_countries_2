@@ -15,3 +15,11 @@
     background-color: black;
     color: white;
 }
+
+.visited_bg {
+    background-color: blanchedalmond;
+}
+
+.going_bg {
+    background-color: #d0faf7;
+}
