@@ -1,4 +1,5 @@
-const CountryData = ({ country, handleVisitedCountry, handleVisitedFlags }) => {
+const CountryData = (props) => {
+    const { country} = props;
     return (
         <div>
             <h3>Country Data</h3>
